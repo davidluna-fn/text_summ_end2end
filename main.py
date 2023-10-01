@@ -2,6 +2,7 @@ from SummaVerse.pipeline.step_01_data_ingestion import DataIngestionTrainingPipe
 from SummaVerse.pipeline.step_02_data_validation import DataValidationTrainingPipeline
 from SummaVerse.pipeline.step_03_data_transformation import DataTransformationTrainingPipeline
 from SummaVerse.pipeline.step_04_model_trainer import ModelTrainerTrainingPipeline
+from SummaVerse.pipeline.step_05_model_evaluation import ModelEvaluationTrainingPipeline
 
 from SummaVerse.logging import logger
 
@@ -49,6 +50,17 @@ try:
     logger.info(f'>>>>> stage {STAGE_NAME} started <<<<< ')
     model_trainer = ModelTrainerTrainingPipeline()
     model_trainer.run()
+    logger.info(f'>>>>> stage {STAGE_NAME} completed <<<<< \n\nx=====================x')
+except Exception as e:
+    logger.exception(e)
+    raise e
+
+STAGE_NAME = 'Model Evaluation stage'
+
+try:
+    logger.info(f'>>>>> stage {STAGE_NAME} started <<<<< ')
+    model_evaluation = ModelEvaluationTrainingPipeline()
+    model_evaluation.run()
     logger.info(f'>>>>> stage {STAGE_NAME} completed <<<<< \n\nx=====================x')
 except Exception as e:
     logger.exception(e)
