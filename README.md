@@ -49,13 +49,6 @@ open up you local host and port
 ```
 
 
-```bash
-Author: Krish Naik
-Data Scientist
-Email: krishnaik06@gmail.com
-
-```
-
 
 
 # AWS-CICD-Deployment-with-Github-Actions
@@ -127,6 +120,6 @@ Email: krishnaik06@gmail.com
 
     AWS_REGION = us-east-1
 
-    AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
+    AWS_ECR_LOGIN_URI = demo>>  ##########.dkr.ecr.ap-south-1.amazonaws.com
 
     ECR_REPOSITORY_NAME = simple-app
