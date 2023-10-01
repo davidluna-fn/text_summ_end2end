@@ -22,7 +22,7 @@ class ModelEvaluation:
         target_batches = list(self.generate_batch_sized_chunks(dataset[column_summary], batch_size))
 
         for article_batch, target_batches in tqdm(
-            zip(article_batch, target_batches), total=len(article_batches)):
+            zip(article_batches, target_batches), total=len(article_batches)):
 
             inputs = tokenizer(article_batch, max_length=1024, truncation=True, 
                                padding='max_length', return_tensors='pt')
