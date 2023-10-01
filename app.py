@@ -28,7 +28,7 @@ async def train():
 @app.get('/prediction')
 async def prediction_route(text):
     try:
-        prediction = PredictionPipeline()
+        obj = PredictionPipeline()
         text = obj.predict(text)
         return text
 
